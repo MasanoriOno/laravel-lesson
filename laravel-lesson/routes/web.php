@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('hello', function () {
     return "<html><body><h1>Hello</h1><p>This is sumple page .</p></body></html>";
 });
+
+Route::get('hello/{msg}', function ($msg) {
+        return "<p>$msg</p>";
+    });
