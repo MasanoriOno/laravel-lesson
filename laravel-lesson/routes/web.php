@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('hello', function () {
+//     return "<html><body><h1>Hello</h1><p>This is sumple page .</p></body></html>";
+// });
+
+// Route::get('hello/{msg}', function ($msg) {
+//     return "<p>$msg</p>";
+// });
+
+Route::get('hello/{msg?}', function ($msg = 'no message.') {
+    return "<p>$msg</p>";
+});
+
+Route::get('hello/{msg1}/{msg2}', function ($msg1, $msg2) {
+    return "<p>$msg1</p><br><p>$msg2</p>";
+});
