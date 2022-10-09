@@ -9,11 +9,7 @@ class HelloController extends Controller
 {
     public function index(Request $request, Response $response)
     {
-        return
-            "<p>RESPONSE</p>
-            {$response}
-            <p>REQUEST</p>
-            {$request}";
+        return view('hello.index');
     }
     // public function __invoke()
     // {
