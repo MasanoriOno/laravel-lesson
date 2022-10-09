@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-global $hoge, $huga;
-$hoge = 'hoge';
-$huga = 'huga';
+use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function __invoke()
+    public function index(Request $request, Response $response)
     {
-        return "<p>this is single action from invoke</p>";
+        return
+            "<p>RESPONSE</p>
+            {$response}
+            <p>REQUEST</p>
+            {$request}";
     }
+    // public function __invoke()
+    // {
+    //     return "<p>this is single action from invoke</p>";
+    // }
     // public function index()
     // {
     //     return "<title>Hello/Index</title>
@@ -29,11 +34,5 @@ class HelloController extends Controller
     //         <li>id:{$id}</li>
     //         <li>pass:{$pass}</li>
     //     </ul>";
-    // }
-
-    // public function other()
-    // {
-    //     global $hoge, $huga;
-    //     return "<p>{$hoge}</p><p>{$huga}</p>";
     // }
 }

@@ -34,9 +34,9 @@ Route::get('/', function () {
 //     return "<p>$msg1</p><br><p>$msg2</p>";
 // });
 
-// Route::get('hello', [HelloController::class, 'index']);
+Route::get('hello', [HelloController::class, 'index']);
 
-Route::get('hello', HelloController::class);
+// Route::get('hello', HelloController::class);
 
 // Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
 
