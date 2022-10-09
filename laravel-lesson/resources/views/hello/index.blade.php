@@ -1,41 +1,21 @@
-<html>
+@extends('layout.helloapp')
 
-<head>
-    <title>Hello/Index</title>
-    <style>
-        body {
-            font-size: 16px;
-            color: #999;
-        }
+@section('title','Index')
 
-        h1 {
-            font-size: 100px;
-            text-align: right;
-            color: #f6f6f6;
-            margin: -50px 0px -100px 0px;
-        }
-    </style>
-</head>
+@section('menubar')
+@parent
+インデックスページ
+@endsection
 
-<body>
-    <h1>Blade/Index</h1>
-    <p>foreachディレクティブに関して</p>
-    <ol>
-        @php
-            $counter = 0;
-        @endphp
-        @while ($counter < count($data))
-            <li>{{ $data[$counter] }}</li>
-            @php
-                $counter++;
-            @endphp
-        @endwhile
-    </ol>
-    <!-- <form method="POST" action="/hello">
-    @csrf
-    <input type="text" name="msg">
-    <input type="submit">
-</form> -->
-</body>
+@section('content')
+<p>ここが本文のコンテンツ</p>
+<p>必要なだけ記述できるよ</p>
+<ul>
+    @each('components.item', $data, 'item')
+</ul>
+@include('components.message',['msg_title'=>'ok','msg_content'=>'this is subview'])
+@endsection
 
-</html>
+@section('footer')
+copyright 2020 timpo.
+@endsection
