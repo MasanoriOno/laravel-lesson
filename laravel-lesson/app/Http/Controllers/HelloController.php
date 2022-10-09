@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+global $hoge, $huga;
+$hoge = 'hoge';
+$huga = 'huga';
+
 class HelloController extends Controller
 {
     // public function index()
@@ -21,5 +25,11 @@ class HelloController extends Controller
             <li>id:{$id}</li>
             <li>pass:{$pass}</li>
         </ul>";
+    }
+
+    public function other()
+    {
+        global $hoge, $huga;
+        return "<p>{$hoge}</p><p>{$huga}</p>";
     }
 }
