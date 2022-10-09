@@ -7,22 +7,17 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $data = [
-            'msg' => '名前を入力して',
-        ];
-        return view('hello.index', $data);
+        $data = ['1', '3', '2', '5', '4',];
+        return view('hello.index', ['data' => $data]);
     }
 
-    public function post(Request $request)
-    {
-        $msg = $request->msg;
-        $data = [
-            'msg' => 'こんにちは' . $msg . 'さん'
-        ];
-        return view('hello.index', $data);
-    }
+    // public function post(Request $request)
+    // {
+    //     $msg = ['msg' => $request->msg];
+    //     return view('hello.index', $msg);
+    // }
     // public function __invoke()
     // {
     //     return "<p>this is single action from invoke</p>";

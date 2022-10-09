@@ -19,12 +19,23 @@
 
 <body>
     <h1>Blade/Index</h1>
-    <p>{{$msg}}</p>
-    <form method="POST" action="/hello">
-        @csrf
-        <input type="text" name="msg">
-        <input type="submit">
-    </form>
+    <p>foreachディレクティブに関して</p>
+    <ol>
+        @php
+            $counter = 0;
+        @endphp
+        @while ($counter < count($data))
+            <li>{{ $data[$counter] }}</li>
+            @php
+                $counter++;
+            @endphp
+        @endwhile
+    </ol>
+    <!-- <form method="POST" action="/hello">
+    @csrf
+    <input type="text" name="msg">
+    <input type="submit">
+</form> -->
 </body>
 
 </html>
