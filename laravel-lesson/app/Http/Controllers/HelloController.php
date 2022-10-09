@@ -9,7 +9,8 @@ class HelloController extends Controller
 {
     public function index(Request $request, Response $response)
     {
-        return view('hello.index');
+        $data = ['msg' => 'これはコントローラから渡されたメッセージ'];
+        return view('hello.index', $data);
     }
     // public function __invoke()
     // {
