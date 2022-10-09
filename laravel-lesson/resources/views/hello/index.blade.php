@@ -21,15 +21,21 @@
     <h1>Blade/Index</h1>
     <p>foreachディレクティブに関して</p>
     <ol>
-        @foreach($data as $item)
-        <li>{{$item}}</li>
-        @endforeach
-    </ol>
-    <!-- <form method="POST" action="/hello">
-        @csrf
-        <input type="text" name="msg">
-        <input type="submit">
-    </form> -->
+        @for ($i = 1; $i < 100; $i++)
+            @if ($i % 2 == 1)
+                @continue
+            @elseif($i <= 10)
+                <li>NO,{{ $i }}</li>
+            @else
+            @break
+        @endif
+    @endfor
+</ol>
+<!-- <form method="POST" action="/hello">
+    @csrf
+    <input type="text" name="msg">
+    <input type="submit">
+</form> -->
 </body>
 
 </html>
