@@ -10,18 +10,15 @@ class HelloController extends Controller
     public function index(Request $request)
     {
         $data = [
-            'msg' => '名前を入力して',
+            'msg' => '',
         ];
         return view('hello.index', $data);
     }
 
     public function post(Request $request)
     {
-        $msg = $request->msg;
-        $data = [
-            'msg' => 'こんにちは' . $msg . 'さん'
-        ];
-        return view('hello.index', $data);
+        $msg = ['msg' => $request->msg];
+        return view('hello.index', $msg);
     }
     // public function __invoke()
     // {
