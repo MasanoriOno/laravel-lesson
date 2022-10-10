@@ -35,7 +35,7 @@ Route::get('/', function () {
 //     return "<p>$msg1</p><br><p>$msg2</p>";
 // });
 
-Route::get('hello', [HelloController::class, 'index'])->middleware(HelloMiddleware::class);
+Route::get('hello', [HelloController::class, 'index']);
 
 Route::post('hello', [HelloController::class, 'post']);
 
