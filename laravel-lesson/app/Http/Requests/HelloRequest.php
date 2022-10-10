@@ -32,4 +32,14 @@ class HelloRequest extends FormRequest
             'age' => 'numeric|between:0,150',
         ];
     }
+
+    public function messages()
+    {
+        return[
+            'name.required'=>'名前は必ず入力',
+            'mail.email'=>'メアド必要',
+            'age.numeric'=>'年齢は整数で',
+            'age.between'=>'０〜１５０で入力',
+        ];
+    }
 }
