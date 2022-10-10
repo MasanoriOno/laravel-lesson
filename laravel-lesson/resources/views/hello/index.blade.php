@@ -10,8 +10,10 @@
 @section('content')
 <p>ここが本文のコンテンツ</p>
 <p>必要なだけ記述できるよ</p>
-<p>controllerValue: {{$message}}</p>
-<p>view composer value : {{$view_message}}</p>
+@foreach ($data as $item)
+{{$item['name']}}
+{{$item['mail']}}
+@endforeach
 @endsection
 
 @section('footer')
