@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\MyRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class HelloRequest extends FormRequest
@@ -29,7 +30,7 @@ class HelloRequest extends FormRequest
         return [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|hello',
+            'age' => ['numeric', new MyRule(5)],
         ];
     }
 
