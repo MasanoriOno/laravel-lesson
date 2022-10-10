@@ -10,10 +10,8 @@
 @section('content')
 <p>ここが本文のコンテンツ</p>
 <p>必要なだけ記述できるよ</p>
-<ul>
-    @each('components.item', $data, 'item')
-</ul>
-@include('components.message',['msg_title'=>'ok','msg_content'=>'this is subview'])
+<p>controllerValue: {{$message}}</p>
+<p>view composer value : {{$view_message}}</p>
 @endsection
 
 @section('footer')
