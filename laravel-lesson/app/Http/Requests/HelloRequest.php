@@ -29,17 +29,17 @@ class HelloRequest extends FormRequest
         return [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|between:0,150',
+            'age' => 'numeric|hello',
         ];
     }
 
     public function messages()
     {
-        return[
-            'name.required'=>'名前は必ず入力',
-            'mail.email'=>'メアド必要',
-            'age.numeric'=>'年齢は整数で',
-            'age.between'=>'０〜１５０で入力',
+        return [
+            'name.required' => '名前は必ず入力',
+            'mail.email' => 'メアド必要',
+            'age.numeric' => '年齢は整数で',
+            'age.hello' => 'Hello! 偶数のみ入力して',
         ];
     }
 }
