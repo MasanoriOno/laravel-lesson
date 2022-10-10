@@ -9,11 +9,8 @@
 
 @section('content')
 <p>ここが本文のコンテンツ</p>
-<p>必要なだけ記述できるよ</p>
-@foreach ($data as $item)
-{{$item['name']}}
-{{$item['mail']}}
-@endforeach
+<p>これは<middleware>google.com</middleware>へのリンクです</p>
+<p>これは<middleware>yahoo.co.jp</middleware>へのリンクです</p>
 @endsection
 
 @section('footer')
