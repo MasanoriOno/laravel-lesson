@@ -5,25 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class HelloController extends Controller
 {
     public function index(Request $request)
     {
-        // $validator = Validator::make($request->query(), [
-        //     'id' => 'required',
-        //     'pass' => 'required',
-        // ]);
-        // if ($validator->fails())
-        //     $msg = 'クエリー文字列に問題';
-        // else
-        //     $msg = 'ID,PASS OK!';
-        if ($request->hasCookie('msg'))
-            $msg = $request->cookie('msg');
-        else
-            $msg = 'cookieはない';
-        return view('hello.index', ['msg' => $msg]);
+        $items = DB::select('select * from people');
+        return view('hello.index', ['items' => $items]);
     }
 
     public function post(Request $request)
